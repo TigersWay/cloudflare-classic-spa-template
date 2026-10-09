@@ -1,0 +1,33 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ *
+ * cSpell:disable
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cloudflare-classic-spa",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-09",
+
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page", // Beware, you'll have to choose between hard/soft 404 when building routes!
+    "run_worker_first": ["/worker/*"]
+  },
+
+  // Uncomment and configure "routes" line for your custom domain.
+  // Check then if you also want *.workers.dev
+  // "routes": [{ "pattern": "your-app.your-domain.dev", "custom_domain": true }],
+  "workers_dev": true,
+  "preview_urls": true,
+
+  "triggers": { "crons": [] },
+
+  "observability": {
+    "logs": { "enabled": true, "invocation_logs": true },
+    "traces": { "enabled": true }
+  },
+
+  "placement": { "mode": "smart" }
+}

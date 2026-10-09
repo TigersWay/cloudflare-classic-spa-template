@@ -1,0 +1,10 @@
+{
+  "npm.packageManager": "bun",
+  "cSpell.words": ["iconify", "oklch", "shadcn", "wght"],
+
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "wrangler.jsonc": "jsonc",
+    ".dev.vars.*": "properties"
+  }
+}

@@ -1,0 +1,7 @@
+# Package Managers
+bun.lock
+bun.lockb
+
+# Miscellaneous
+static
+*.html

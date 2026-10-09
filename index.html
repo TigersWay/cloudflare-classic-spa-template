@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- <%= name %> v<%= version %> | License: <%= license %> | <%- author %> -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= name %> v<%= version %></title>
+  <script>
+    // Keep in sync with <ModeWatcher /> options (mode-watcher-mode key, 'system' default, 'dark' class)
+    (() => {
+      try {
+        const mode = localStorage.getItem('mode-watcher-mode') ?? 'system';
+        const light = mode === 'light' || (mode === 'system' && matchMedia('(prefers-color-scheme: light)').matches);
+        document.documentElement.classList.toggle('dark', !light);
+        document.documentElement.style.colorScheme = light ? 'light' : 'dark';
+      } catch { }
+    })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg">
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

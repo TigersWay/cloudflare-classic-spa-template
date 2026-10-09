@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- <%= name %> v<%= version %> | License: <%= license %> | <%- author %> -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // Keep in sync with <ModeWatcher /> options (mode-watcher-mode key, 'system' default, 'dark' class)
+    (() => {
+      try {
+        const mode = localStorage.getItem('mode-watcher-mode') ?? 'system';
+        const light = mode === 'light' || (mode === 'system' && matchMedia('(prefers-color-scheme: light)').matches);
+        document.documentElement.classList.toggle('dark', !light);
+        document.documentElement.style.colorScheme = light ? 'light' : 'dark';
+      } catch { }
+    })();
+  </script>
+  <title>404 — Not Found</title>
+  <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg">
+  <link rel="stylesheet" href="/src/app.css" />
+  <meta name="robots" content="noindex" />
+</head>
+<body class="px-4 py-16 text-center">
+  <h1 class="my-2.5 text-foreground">404</h1>
+  <p class="my-4">This page doesn't exist.</p>
+  <a href="/" class="cursor-pointer text-primary-foreground underline">← Let's go back 'Home'</a>
+</body>
+</html>

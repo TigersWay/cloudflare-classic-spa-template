@@ -1,0 +1,60 @@
+{
+  "name": "cloudflare-classic-spa-template",
+  "description": "Cloudflare SPA default/empty implementation",
+  "keywords": [
+    "cloudflare",
+    "cloudflare-workers",
+    "itty-router",
+    "vite",
+    "svelte5"
+  ],
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Ben Michaud <ben@tigersway.net>",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "prebuild": "rimraf --glob \"public/!(.gitkeep)\"",
+    "deploy": "bun run build && wrangler deploy",
+    "test": "vitest run --reporter=verbose",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.63.1",
+    "@cloudflare/vitest-plugin": "^1.4.0",
+    "@iconify-json/tabler": "^1.2.42",
+    "@internationalized/date": "^3.12.4",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "bits-ui": "^2.19.5",
+    "cn": "^0.4.0",
+    "mode-watcher": "^1.1.0",
+    "prettier": "^3.9.9",
+    "prettier-plugin-svelte": "^4.1.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "rimraf": "^6.1.3",
+    "shadcn-svelte": "^1.7.0",
+    "svelte": "^5.57.2",
+    "tailwind-variants": "^3.3.1",
+    "tailwindcss": "^4.3.3",
+    "tw-animate-css": "^1.4.0",
+    "unplugin-icons": "^24.0.0",
+    "vite": "^8.3.4",
+    "vite-plugin-ejs": "^2.0.0",
+    "vite-plugin-minify": "^3.0.0",
+    "vitest": "^5.0.3",
+    "wrangler": "^4.149.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "itty-router": "^5.0.24"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "bun",
+      "version": ">=1.0.0",
+      "onFail": "warn"
+    }
+  }
+}
